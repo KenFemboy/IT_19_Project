@@ -15,10 +15,10 @@ export default function Notifications() {
     <div className="ttms-section space-y-6 pb-16">
       <section className="glass-card flex flex-wrap items-center justify-between gap-4 p-6">
         <div>
-          <h2 className="text-xl font-semibold text-slate-900">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
             Notification center
           </h2>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Safety alerts, advisories, and driver updates.
           </p>
         </div>

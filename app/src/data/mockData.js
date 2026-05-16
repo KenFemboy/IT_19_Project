@@ -206,13 +206,18 @@ export const emergencyHotlines = [
 export const safetyUpdates = [
   {
     id: 'S-01',
-    title: 'Helmet compliance drive',
-    detail: 'Random helmet checks every Friday afternoon in main terminals.'
+    title: 'Share your route',
+    detail: 'Tell a trusted family member your pickup and drop-off points before boarding.'
   },
   {
     id: 'S-02',
-    title: 'Passenger safety line',
-    detail: 'Hotline support available 24/7 for urgent concerns.'
+    title: 'Keep distance from traffic',
+    detail: 'Wait on the sidewalk and allow the driver to stop safely before approaching.'
+  },
+  {
+    id: 'S-03',
+    title: 'Check driver ID',
+    detail: 'Always confirm the tricycle ID and plate number match your ride details.'
   }
 ]
 

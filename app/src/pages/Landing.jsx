@@ -40,12 +40,12 @@ export default function Landing() {
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4"
+                className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 dark:border-emerald-300/20 dark:bg-emerald-500/10"
               >
-                <p className="text-sm font-semibold text-emerald-800">
+                <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-200">
                   {benefit.title}
                 </p>
-                <p className="mt-2 text-xs text-emerald-700">
+                <p className="mt-2 text-xs text-emerald-700 dark:text-emerald-300">
                   {benefit.detail}
                 </p>
               </div>
@@ -53,28 +53,28 @@ export default function Landing() {
           </div>
         </div>
         <div className="glass-card p-6">
-          <p className="text-sm font-semibold text-slate-900">
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">
             Community trust pulse
           </p>
-          <p className="mt-2 text-xs text-slate-500">
+          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
             94% of passengers feel safer with TTMS verification.
           </p>
           <div className="mt-6 space-y-4">
-            <div className="flex items-center gap-3 rounded-2xl bg-white/70 p-3">
+            <div className="flex items-center gap-3 rounded-2xl bg-white/70 p-3 dark:bg-slate-900/60">
               <ShieldCheck className="h-4 w-4 text-emerald-600" />
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 1,240 verified drivers active this month
               </p>
             </div>
-            <div className="flex items-center gap-3 rounded-2xl bg-white/70 p-3">
+            <div className="flex items-center gap-3 rounded-2xl bg-white/70 p-3 dark:bg-slate-900/60">
               <MapPinned className="h-4 w-4 text-emerald-600" />
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 22 barangays covered by safety mapping
               </p>
             </div>
-            <div className="flex items-center gap-3 rounded-2xl bg-white/70 p-3">
+            <div className="flex items-center gap-3 rounded-2xl bg-white/70 p-3 dark:bg-slate-900/60">
               <Megaphone className="h-4 w-4 text-emerald-600" />
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Live advisories updated every 2 hours
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function Landing() {
             title="About TTMS"
             subtitle="A public passenger platform for Tagum City tricycles."
           />
-          <p className="mt-4 text-sm text-slate-500">
+          <p className="mt-4 text-sm text-slate-500 dark:text-slate-300">
             TTMS is a front-end prototype that visualizes verified drivers,
             passenger safety updates, and emergency support. It highlights how
             technology can improve public transport trust and transparency.
@@ -117,11 +117,13 @@ export default function Landing() {
           viewport={{ once: true }}
           className="glass-card p-6"
         >
-          <p className="text-sm font-semibold text-slate-900">Contact TTMS</p>
-          <p className="mt-2 text-xs text-slate-500">
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+            Contact TTMS
+          </p>
+          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
             For passenger concerns or safety updates, reach our team anytime.
           </p>
-          <div className="mt-4 space-y-3 text-xs text-slate-600">
+          <div className="mt-4 space-y-3 text-xs text-slate-600 dark:text-slate-300">
             <p>Emergency Desk: 0917-300-TTMS</p>
             <p>Email: support@ttms.tagum</p>
             <p>Hours: 5:00 AM - 10:00 PM daily</p>

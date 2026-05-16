@@ -47,7 +47,7 @@ export default function SearchDriver() {
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
                   filter === item
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-emerald-50 text-emerald-700'
+                    : 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-200'
                 }`}
               >
                 {item}

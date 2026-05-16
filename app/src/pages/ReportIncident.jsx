@@ -50,16 +50,16 @@ export default function ReportIncident() {
   return (
     <div className="ttms-section space-y-6 pb-16">
       <section className="glass-card p-6">
-        <h2 className="text-xl font-semibold text-slate-900">
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
           Report an incident
         </h2>
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
           Help maintain a safe community by reporting unsafe behavior.
         </p>
       </section>
       <form className="glass-card space-y-4 p-6" onSubmit={handleSubmit}>
         <div>
-          <label className="text-xs font-semibold text-slate-600">
+          <label className="text-xs font-semibold text-slate-600 dark:text-slate-300">
             Incident category
           </label>
           <select
@@ -75,7 +75,7 @@ export default function ReportIncident() {
           </select>
         </div>
         <div>
-          <label className="text-xs font-semibold text-slate-600">
+          <label className="text-xs font-semibold text-slate-600 dark:text-slate-300">
             Location
           </label>
           <input
@@ -88,7 +88,7 @@ export default function ReportIncident() {
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-slate-600">
+          <label className="text-xs font-semibold text-slate-600 dark:text-slate-300">
             Description
           </label>
           <textarea
@@ -100,16 +100,17 @@ export default function ReportIncident() {
             placeholder="Share details about the incident"
           />
         </div>
-        <div className="rounded-2xl border border-dashed border-emerald-200 bg-emerald-50/70 p-4 text-xs text-emerald-700">
+        <div className="rounded-2xl border border-dashed border-emerald-200 bg-emerald-50/70 p-4 text-xs text-emerald-700 dark:border-emerald-300/20 dark:bg-emerald-500/10 dark:text-emerald-200">
           Upload image placeholder
         </div>
-        <label className="flex items-center gap-2 text-xs text-slate-500">
+        <label className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
           <input
             type="checkbox"
             checked={form.anonymous}
             onChange={(event) =>
               setForm((prev) => ({ ...prev, anonymous: event.target.checked }))
             }
+            className="h-4 w-4 accent-emerald-600"
           />
           Report anonymously
         </label>

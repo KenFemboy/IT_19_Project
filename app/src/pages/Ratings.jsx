@@ -35,16 +35,16 @@ export default function Ratings() {
   return (
     <div className="ttms-section space-y-6 pb-16">
       <section className="glass-card p-6">
-        <h2 className="text-xl font-semibold text-slate-900">
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
           Ratings & feedback
         </h2>
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
           Share your experience to help fellow passengers.
         </p>
       </section>
       <form className="glass-card space-y-4 p-6" onSubmit={handleSubmit}>
         <div>
-          <label className="text-xs font-semibold text-slate-600">
+          <label className="text-xs font-semibold text-slate-600 dark:text-slate-300">
             Driver ID
           </label>
           <input
@@ -56,7 +56,7 @@ export default function Ratings() {
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-slate-600">
+          <label className="text-xs font-semibold text-slate-600 dark:text-slate-300">
             Rating
           </label>
           <div className="mt-2 flex items-center gap-2">
@@ -68,17 +68,19 @@ export default function Ratings() {
                 className={`rounded-full p-2 ${
                   form.rating >= star
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-emerald-50 text-emerald-600'
+                    : 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-200'
                 }`}
               >
                 <Star className="h-4 w-4" />
               </button>
             ))}
-            <span className="text-xs text-slate-500">{form.rating} stars</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">
+              {form.rating} stars
+            </span>
           </div>
         </div>
         <div>
-          <label className="text-xs font-semibold text-slate-600">
+          <label className="text-xs font-semibold text-slate-600 dark:text-slate-300">
             Comment
           </label>
           <textarea

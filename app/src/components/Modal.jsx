@@ -17,16 +17,20 @@ export default function Modal({ open, onClose, title, children }) {
             className="glass-card max-w-lg rounded-3xl p-6"
           >
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                {title}
+              </h3>
               <button
                 type="button"
                 onClick={onClose}
-                className="text-xs font-semibold text-emerald-700"
+                className="text-xs font-semibold text-emerald-700 dark:text-emerald-200"
               >
                 Close
               </button>
             </div>
-            <div className="mt-4 text-sm text-slate-600">{children}</div>
+            <div className="mt-4 text-sm text-slate-600 dark:text-slate-300">
+              {children}
+            </div>
           </motion.div>
         </motion.div>
       )}

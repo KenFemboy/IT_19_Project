@@ -11,8 +11,10 @@ export default function Settings() {
   return (
     <div className="ttms-section space-y-6 pb-16">
       <section className="glass-card p-6">
-        <h2 className="text-xl font-semibold text-slate-900">Settings</h2>
-        <p className="mt-2 text-sm text-slate-500">
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+          Settings
+        </h2>
+        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
           Customize your TTMS experience.
         </p>
       </section>
@@ -20,8 +22,10 @@ export default function Settings() {
       <section className="glass-card space-y-4 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-900">Dark mode</p>
-            <p className="text-xs text-slate-500">
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
+              Dark mode
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Toggle night-friendly interface.
             </p>
           </div>
@@ -35,32 +39,40 @@ export default function Settings() {
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-900">
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
               Email notifications
             </p>
-            <p className="text-xs text-slate-500">Safety alerts and updates.</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Safety alerts and updates.
+            </p>
           </div>
           <input
             type="checkbox"
             checked={settings.notifyEmail}
             onChange={(event) => updateSetting('notifyEmail', event.target.checked)}
+            className="h-5 w-5 accent-emerald-600"
           />
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-900">
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
               SMS notifications
             </p>
-            <p className="text-xs text-slate-500">Emergency updates only.</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Emergency updates only.
+            </p>
           </div>
           <input
             type="checkbox"
             checked={settings.notifySms}
             onChange={(event) => updateSetting('notifySms', event.target.checked)}
+            className="h-5 w-5 accent-emerald-600"
           />
         </div>
         <div>
-          <p className="text-sm font-semibold text-slate-900">Language</p>
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+            Language
+          </p>
           <select
             value={settings.language}
             onChange={(event) => updateSetting('language', event.target.value)}
@@ -72,7 +84,9 @@ export default function Settings() {
           </select>
         </div>
         <div>
-          <p className="text-sm font-semibold text-slate-900">Accessibility</p>
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+            Accessibility
+          </p>
           <select
             value={settings.accessibility}
             onChange={(event) =>

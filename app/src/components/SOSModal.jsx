@@ -7,7 +7,7 @@ export default function SOSModal({ open, onClose }) {
         Stay calm. Your location is being prepared for emergency responders.
         Please contact the nearest hotline listed on this page.
       </p>
-      <p className="mt-3 text-xs text-emerald-700">
+      <p className="mt-3 text-xs text-emerald-700 dark:text-emerald-200">
         This is a front-end mock action only.
       </p>
     </Modal>

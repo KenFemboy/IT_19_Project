@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   AlertTriangle,
@@ -6,7 +6,8 @@ import {
   Search,
   ShieldCheck,
   Bell,
-  MapPinned
+  MapPinned,
+  UploadCloud
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import {
@@ -19,35 +20,73 @@ import DashboardCard from '../components/DashboardCard'
 import SectionHeader from '../components/SectionHeader'
 import MapPlaceholder from '../components/MapPlaceholder'
 import Timeline from '../components/Timeline'
+import Logo from '../assets/logo.png'
 import { Area, AreaChart, ResponsiveContainer, Tooltip } from 'recharts'
 
 export default function Dashboard() {
-  const { notifications, rideHistory } = useContext(AppContext)
+  const { notifications, rideHistory, darkMode } = useContext(AppContext)
+  const [logoError, setLogoError] = useState(false)
+
+  // Logo replacement steps:
+  // 1) Add your logo image at: src/assets/logo.png (PNG, JPG, or SVG)
+  // 2) Replace the logoSrc below with: import Logo from '../assets/logo.png'
+  // 3) Set: const logoSrc = Logo
+  const logoSrc = Logo
+  const showLogo = Boolean(logoSrc) && !logoError
 
   return (
     <div className="ttms-section space-y-8 pb-16">
-      <section className="glass-card p-6">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <p className="text-sm text-slate-500">Welcome back, Passenger</p>
-            <h2 className="text-2xl font-semibold text-slate-900">
-              Your TTMS Dashboard
-            </h2>
+      <section className="glass-card p-6 sm:p-8">
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="flex flex-col justify-between gap-6">
+            <div>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                Welcome back, Passenger
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white sm:text-3xl">
+                Your TTMS Dashboard
+              </h2>
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 sm:text-base">
+                Track verified drivers, ride activity, and real-time safety updates.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/search-driver" className="ttms-button">
+                <Search className="h-4 w-4" />
+                Search Driver
+              </Link>
+              <Link to="/search-driver" className="ttms-button-outline">
+                <QrCode className="h-4 w-4" />
+                Scan QR
+              </Link>
+            </div>
           </div>
-          <div className="flex gap-3">
-            <Link to="/search-driver" className="ttms-button">
-              <Search className="h-4 w-4" />
-              Search Driver
-            </Link>
-            <Link to="/search-driver" className="ttms-button-outline">
-              <QrCode className="h-4 w-4" />
-              Scan QR
-            </Link>
+          <div className="flex items-center justify-center">
+            <div className="relative h-44 w-44 overflow-hidden rounded-xl border border-dashed border-emerald-300/70 bg-white/30 shadow-soft backdrop-blur dark:border-emerald-400/40 dark:bg-slate-900/40 sm:h-48 sm:w-48 lg:h-52 lg:w-52 xl:h-56 xl:w-56">
+              {showLogo ? (
+                <img
+                  src={logoSrc}
+                  alt="TTMS Logo"
+                  className="h-full w-full object-cover"
+                  onError={() => setLogoError(true)}
+                />
+              ) : (
+                <>
+                  <UploadCloud className="h-6 w-6 text-emerald-400" />
+                  <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-200">
+                    Your Logo Here
+                  </p>
+                  <p className="text-[11px] text-emerald-600/90 dark:text-emerald-300/80">
+                    Drop your brand asset
+                  </p>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <DashboardCard
           title="Verified Drivers"
           value={`${drivers.filter((driver) => driver.verified).length}`}
@@ -85,10 +124,11 @@ export default function Dashboard() {
                 </defs>
                 <Tooltip
                   contentStyle={{
-                    background: 'white',
+                    background: darkMode ? '#0f172a' : 'white',
                     borderRadius: 12,
-                    border: '1px solid #e2e8f0',
-                    fontSize: 12
+                    border: darkMode ? '1px solid rgba(148, 163, 184, 0.2)' : '1px solid #e2e8f0',
+                    fontSize: 12,
+                    color: darkMode ? '#e2e8f0' : '#0f172a'
                   }}
                 />
                 <Area
@@ -118,10 +158,10 @@ export default function Dashboard() {
                   {driver.id}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
                     {driver.name}
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     {driver.barangay} - {driver.status}
                   </p>
                 </div>
@@ -148,11 +188,16 @@ export default function Dashboard() {
           />
           <div className="mt-4 space-y-3">
             {safetyUpdates.map((tip) => (
-              <div key={tip.id} className="rounded-2xl bg-emerald-50/70 p-4">
-                <p className="text-sm font-semibold text-emerald-800">
+              <div
+                key={tip.id}
+                className="rounded-2xl bg-emerald-50/70 p-4 dark:bg-emerald-500/10"
+              >
+                <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-200">
                   {tip.title}
                 </p>
-                <p className="mt-2 text-xs text-emerald-700">{tip.detail}</p>
+                <p className="mt-2 text-xs text-emerald-700 dark:text-emerald-300">
+                  {tip.detail}
+                </p>
               </div>
             ))}
           </div>
@@ -174,15 +219,15 @@ export default function Dashboard() {
             {rideHistory.slice(0, 3).map((ride) => (
               <div
                 key={ride.id}
-                className="flex items-center justify-between rounded-2xl bg-white/70 p-3 text-xs"
+                className="flex items-center justify-between rounded-2xl bg-white/70 p-3 text-xs dark:bg-slate-900/60"
               >
                 <div>
-                  <p className="font-semibold text-slate-700">
-                    {ride.origin} -> {ride.destination}
+                  <p className="font-semibold text-slate-700 dark:text-slate-100">
+                    {ride.origin} → {ride.destination}
                   </p>
-                  <p className="text-slate-500">{ride.date}</p>
+                  <p className="text-slate-500 dark:text-slate-400">{ride.date}</p>
                 </div>
-                <span className="rounded-full bg-emerald-100 px-2 py-1 font-semibold text-emerald-700">
+                <span className="rounded-full bg-emerald-100 px-2 py-1 font-semibold text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-200">
                   {ride.status}
                 </span>
               </div>
@@ -224,10 +269,10 @@ export default function Dashboard() {
       <section className="glass-card p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold text-slate-900">
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
               Emergency SOS
             </p>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Immediate assistance with one tap.
             </p>
           </div>
