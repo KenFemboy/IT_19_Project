@@ -15,7 +15,7 @@ export default function Settings() {
           Settings
         </h2>
         <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-          Customize your TTMS experience.
+          Customize your TRISAFE experience.
         </p>
       </section>
 

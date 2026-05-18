@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { QrCode, Search, ShieldCheck, UploadCloud } from 'lucide-react'
-import Logo from '../assets/Logo.png'
+import Logo from '../assets/logo.png'
 
 export default function Hero() {
   const [logoError, setLogoError] = useState(false)
@@ -24,6 +24,9 @@ export default function Hero() {
               <ShieldCheck className="h-4 w-4" />
               Smart-city passenger safety
             </span>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-100">
+              TRISAFE
+            </p>
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl 2xl:text-6xl">
               Tagum Tricycle Monitoring System
             </h1>
@@ -32,24 +35,14 @@ export default function Hero() {
               assistance across Tagum City. Built for passengers who prioritize
               safety and community trust.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link to="/search-driver" className="ttms-button bg-white text-emerald-700">
-                <Search className="h-4 w-4" />
-                Search Driver
-              </Link>
-              <Link to="/search-driver" className="ttms-button-outline border-white/70 text-white">
-                <QrCode className="h-4 w-4" />
-                Scan Driver QR
-              </Link>
-            </div>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="hidden lg:flex items-center justify-center">
             <div className="relative h-48 w-48 overflow-hidden rounded-xl border border-dashed border-white/70 bg-white/10 shadow-soft backdrop-blur dark:border-emerald-300/40 dark:bg-slate-950/40 sm:h-52 sm:w-52 lg:h-56 lg:w-56 xl:h-60 xl:w-60">
               {showLogo ? (
                 <img
                   src={Logo}
-                  alt="TTMS logo"
+                  alt="TRISAFE logo"
                   className="h-full w-full object-cover"
                   onError={() => setLogoError(true)}
                 />
@@ -65,6 +58,17 @@ export default function Hero() {
                 </>
               )}
             </div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link to="/search-driver" className="ttms-button bg-white text-emerald-700">
+              <Search className="h-4 w-4" />
+              Search Driver
+            </Link>
+            <Link to="/search-driver" className="ttms-button-outline border-white/70 text-white">
+              <QrCode className="h-4 w-4" />
+              Scan Driver QR
+            </Link>
           </div>
         </div>
       </motion.div>

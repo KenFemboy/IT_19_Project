@@ -2,7 +2,7 @@ import { Bell, Menu, PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
-import LogoHolder from '../assets/holder.png'
+import Logo from '../assets/logo.png'
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -20,11 +20,11 @@ export default function Navbar({ onToggleSidebar, onToggleCollapse, sidebarColla
       <div className="ttms-section flex items-center justify-between gap-3 py-4">
         <Link to="/" className="flex items-center gap-3">
           <div className="flex h-10 w-10 overflow-hidden rounded-2xl bg-white dark:bg-slate-900">
-            <img src={LogoHolder} alt="TTMS logo" className="h-full w-full object-cover" />
+            <img src={Logo} alt="TRISAFE logo" className="h-full w-full object-cover" />
           </div>
           <div>
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
-              Tagum TTMS
+              TRISAFE
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Passenger Monitoring

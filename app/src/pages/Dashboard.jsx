@@ -44,7 +44,7 @@ export default function Dashboard() {
                 Welcome back, Passenger
               </p>
               <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white sm:text-3xl">
-                Your TTMS Dashboard
+                Your TRISAFE Dashboard
               </h2>
               <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 sm:text-base">
                 Track verified drivers, ride activity, and real-time safety updates.
@@ -61,12 +61,12 @@ export default function Dashboard() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="hidden lg:flex items-center justify-center">
             <div className="relative h-44 w-44 overflow-hidden rounded-xl border border-dashed border-emerald-300/70 bg-white/30 shadow-soft backdrop-blur dark:border-emerald-400/40 dark:bg-slate-900/40 sm:h-48 sm:w-48 lg:h-52 lg:w-52 xl:h-56 xl:w-56">
               {showLogo ? (
                 <img
                   src={logoSrc}
-                  alt="TTMS Logo"
+                  alt="TRISAFE Logo"
                   className="h-full w-full object-cover"
                   onError={() => setLogoError(true)}
                 />

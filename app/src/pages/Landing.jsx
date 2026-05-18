@@ -29,7 +29,7 @@ export default function Landing() {
         <div className="glass-card p-6">
           <SectionHeader
             title="Smart transportation for Tagum City"
-            subtitle="TTMS keeps passengers connected to verified drivers, safety updates, and community alerts."
+            subtitle="TRISAFE keeps passengers connected to verified drivers, safety updates, and community alerts."
             action={
               <Link to="/dashboard" className="ttms-button">
                 Open Dashboard
@@ -57,7 +57,7 @@ export default function Landing() {
             Community trust pulse
           </p>
           <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-            94% of passengers feel safer with TTMS verification.
+            94% of passengers feel safer with TRISAFE verification.
           </p>
           <div className="mt-6 space-y-4">
             <div className="flex items-center gap-3 rounded-2xl bg-white/70 p-3 dark:bg-slate-900/60">
@@ -84,7 +84,7 @@ export default function Landing() {
 
       <section className="space-y-6">
         <SectionHeader
-          title="Why passengers trust TTMS"
+          title="Why passengers trust TRISAFE"
           subtitle="Built with safety-first design and smart city transparency."
         />
         <TrustSection />
@@ -93,11 +93,11 @@ export default function Landing() {
       <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="glass-card p-6">
           <SectionHeader
-            title="About TTMS"
+            title="About TRISAFE"
             subtitle="A public passenger platform for Tagum City tricycles."
           />
           <p className="mt-4 text-sm text-slate-500 dark:text-slate-300">
-            TTMS is a front-end prototype that visualizes verified drivers,
+            TRISAFE is a front-end prototype that visualizes verified drivers,
             passenger safety updates, and emergency support. It highlights how
             technology can improve public transport trust and transparency.
           </p>
@@ -118,14 +118,14 @@ export default function Landing() {
           className="glass-card p-6"
         >
           <p className="text-sm font-semibold text-slate-900 dark:text-white">
-            Contact TTMS
+            Contact TRISAFE
           </p>
           <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
             For passenger concerns or safety updates, reach our team anytime.
           </p>
           <div className="mt-4 space-y-3 text-xs text-slate-600 dark:text-slate-300">
-            <p>Emergency Desk: 0917-300-TTMS</p>
-            <p>Email: support@ttms.tagum</p>
+            <p>Emergency Desk: 0917-300-TRISAFE</p>
+            <p>Email: support@trisafe.tagum</p>
             <p>Hours: 5:00 AM - 10:00 PM daily</p>
           </div>
         </motion.div>
