@@ -16,13 +16,13 @@ export default function Navbar({ onToggleSidebar, onToggleCollapse, sidebarColla
   const { darkMode, setDarkMode } = useContext(AppContext)
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/30 bg-white/90 backdrop-blur dark:border-emerald-100/10 dark:bg-slate-950/80">
-      <div className="ttms-section flex items-center justify-between gap-3 py-4">
-        <Link to="/" className="flex items-center gap-3">
+    <header className="sticky top-0 z-[60] border-b border-white/30 bg-white/90 backdrop-blur dark:border-emerald-100/10 dark:bg-slate-950/80">
+      <div className="flex w-full items-center justify-between gap-2 px-4 py-4 sm:gap-3 sm:px-6 lg:px-8">
+        <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
           <div className="flex h-10 w-10 overflow-hidden rounded-2xl bg-white dark:bg-slate-900">
             <img src={Logo} alt="TRISAFE logo" className="h-full w-full object-cover" />
           </div>
-          <div>
+          <div className="hidden sm:block">
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
               TRISAFE
             </p>
