@@ -9,6 +9,7 @@ const navLinks = [
   { path: '/dashboard', label: 'Dashboard' },
   { path: '/search-driver', label: 'Search' },
   { path: '/ride-history', label: 'Rides' },
+  { path: '/family-members', label: 'Family' },
   { path: '/settings', label: 'Settings' }
 ]
 

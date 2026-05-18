@@ -203,6 +203,27 @@ export const emergencyHotlines = [
   { id: 'E-03', name: 'Tagum City Fire Station', number: '0917-008-7788' }
 ]
 
+export const familyMembers = [
+  {
+    id: 'F-01',
+    name: 'Anna Dela Cruz',
+    relation: 'Mother',
+    status: 'Live tracking active'
+  },
+  {
+    id: 'F-02',
+    name: 'Mark Dela Cruz',
+    relation: 'Father',
+    status: 'Receives route updates'
+  },
+  {
+    id: 'F-03',
+    name: 'Jessa Dela Cruz',
+    relation: 'Sister',
+    status: 'Emergency contact enabled'
+  }
+]
+
 export const safetyUpdates = [
   {
     id: 'S-01',

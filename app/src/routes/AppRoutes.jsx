@@ -10,6 +10,7 @@ import RideHistory from '../pages/RideHistory'
 import Notifications from '../pages/Notifications'
 import Emergency from '../pages/Emergency'
 import Settings from '../pages/Settings'
+import FamilyMembers from '../pages/FamilyMembers'
 
 export default function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ export default function AppRoutes() {
         <Route path="/ratings" element={<Ratings />} />
         <Route path="/ride-history" element={<RideHistory />} />
         <Route path="/notifications" element={<Notifications />} />
+        <Route path="/family-members" element={<FamilyMembers />} />
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/settings" element={<Settings />} />
       </Route>

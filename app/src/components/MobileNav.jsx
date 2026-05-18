@@ -1,10 +1,11 @@
-import { Home, LayoutDashboard, Search, Bell, User } from 'lucide-react'
+import { Home, LayoutDashboard, Search, Bell, User, Users } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 const items = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/search-driver', label: 'Search', icon: Search },
+  { path: '/family-members', label: 'Family', icon: Users },
   { path: '/notifications', label: 'Alerts', icon: Bell },
   { path: '/settings', label: 'Settings', icon: User }
 ]
@@ -12,7 +13,7 @@ const items = [
 export default function MobileNav() {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-30 border-t border-white/50 bg-white/90 backdrop-blur dark:border-emerald-100/10 dark:bg-slate-950/80 lg:hidden">
-      <div className="grid grid-cols-5 gap-2 px-4 py-3">
+      <div className="grid grid-cols-6 gap-1 px-3 py-3">
         {items.map((item) => {
           const Icon = item.icon
           return (

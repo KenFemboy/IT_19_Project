@@ -4,27 +4,20 @@ import Navbar from '../components/Navbar'
 import MobileNav from '../components/MobileNav'
 import Footer from '../components/Footer'
 import Sidebar from '../components/Sidebar'
+import LocationShareModal from '../components/LocationShareModal'
 import { MapPin, Phone } from 'lucide-react'
 
 export default function MainLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [locationShareOpen, setLocationShareOpen] = useState(false)
+  const [trackedLocation, setTrackedLocation] = useState({
+    latitude: 7.4477,
+    longitude: 125.8073
+  })
 
   const handleTrackLocation = () => {
-    if (!navigator.geolocation) {
-      window.alert('Geolocation is not supported by your browser.')
-      return
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords
-        window.alert(`Current location tracked:\nLatitude: ${latitude.toFixed(5)}\nLongitude: ${longitude.toFixed(5)}`)
-      },
-      () => {
-        window.alert('Unable to retrieve your current location. Please allow location access.')
-      }
-    )
+    setLocationShareOpen(true)
   }
 
   return (
@@ -63,6 +56,11 @@ export default function MainLayout() {
         <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
       </Link>
       <MobileNav />
+      <LocationShareModal
+        open={locationShareOpen}
+        onClose={() => setLocationShareOpen(false)}
+        coordinates={trackedLocation}
+      />
     </div>
   )
 }
