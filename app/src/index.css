@@ -11,6 +11,17 @@
     scroll-behavior: smooth;
   }
 
+  *,
+  *::before,
+  *::after {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     @apply bg-cityGray font-body text-slate-800 antialiased;
   }
